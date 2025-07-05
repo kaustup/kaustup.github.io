@@ -6,7 +6,6 @@
   <meta name="google-site-verification" content="fycR5O8Fpy8vEWCSyoCM8g3DpCNEJLKX-3EtREZ7o-U" />
   <title>Kaustup Dhakal | Web Developer</title>
   <style>
-    /* Reset & basic */
     * {
       margin: 0;
       padding: 0;
@@ -43,9 +42,6 @@
     nav ul li {
       font-weight: 600;
     }
-    nav ul li a {
-      font-size: 1rem;
-    }
     main {
       max-width: 900px;
       margin: 100px auto 40px;
@@ -68,18 +64,22 @@
       display: inline-block;
       padding-bottom: 0.2rem;
     }
+
     /* Hero */
     #home {
       text-align: center;
       padding: 3rem 1rem;
-      background: white;
+      background-image: url('h.jpeg');
+      background-size: cover;
+      background-position: center;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+      color: white;
     }
     #home p {
       font-size: 1.1rem;
       margin-top: 0.8rem;
-      color: #374151;
+      color: #e5e7eb;
     }
     .stats {
       display: flex;
@@ -88,13 +88,15 @@
       margin-top: 2rem;
     }
     .stat {
-      background: #e0e7ff;
+      background: rgba(0, 0, 0, 0.6);
       padding: 1rem 2rem;
       border-radius: 8px;
       font-weight: 700;
-      color: #1e40af;
+      color: white;
       min-width: 110px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.2);
     }
+
     /* About */
     #about {
       background: white;
@@ -107,28 +109,33 @@
       gap: 2rem;
     }
     #about img {
-      width: 200px;
+      width: 220px;
       border-radius: 50%;
-      border: 3px solid #3b82f6;
+      border: 4px solid #3b82f6;
       flex-shrink: 0;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
     }
     #about .about-text {
       flex: 1;
       font-size: 1.1rem;
       color: #374151;
     }
+
     /* Skills */
     #skills {
       background: white;
       padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+      text-align: center;
     }
     .skills-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 1.5rem;
       justify-content: center;
+      margin-top: 1rem;
     }
     .skill-item {
       width: 80px;
@@ -149,6 +156,7 @@
       max-width: 50px;
       max-height: 50px;
     }
+
     /* Contact */
     #contact {
       background: white;
@@ -159,10 +167,7 @@
       font-size: 1.1rem;
       color: #374151;
     }
-    #contact a {
-      color: #3b82f6;
-      font-weight: 600;
-    }
+
     footer {
       text-align: center;
       padding: 1rem 0;
@@ -192,7 +197,6 @@
       </ul>
     </nav>
   </header>
-  <img src="h.jpeg"
   <main>
     <section id="home">
       <h1>Kaustup Dhakal</h1>
