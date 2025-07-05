@@ -4,247 +4,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="google-site-verification" content="fycR5O8Fpy8vEWCSyoCM8g3DpCNEJLKX-3EtREZ7o-U" />
-  <title>Kaustup Dhakal | Web Developer</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      background: #f9fafb;
-      color: #333;
-      line-height: 1.6;
-    }
-    a {
-      color: #3b82f6;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    header {
-      background: white;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 10;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-    }
-    nav ul li {
-      font-weight: 600;
-    }
-    main {
-      max-width: 900px;
-      margin: 100px auto 40px;
-      padding: 0 1rem;
-    }
-    section {
-      margin-bottom: 4rem;
-    }
-    h1 {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 0.5rem;
-      color: #1e40af;
-    }
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #1e40af;
-      border-bottom: 3px solid #3b82f6;
-      display: inline-block;
-      padding-bottom: 0.2rem;
-    }
-
-    /* Hero */
-    #home {
-      text-align: center;
-      padding: 3rem 1rem;
-      background-image: url('h.jpeg');
-      background-size: cover;
-      background-position: center;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
-      color: white;
-    }
-    #home p {
-      font-size: 1.1rem;
-      margin-top: 0.8rem;
-      color: #e5e7eb;
-    }
-    .stats {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      margin-top: 2rem;
-    }
-    .stat {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      font-weight: 700;
-      color: white;
-      min-width: 110px;
-      box-shadow: 0 4px 8px rgb(0 0 0 / 0.2);
-    }
-
-    /* About */
-    #about {
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 2rem;
-    }
-    #about img {
-      width: 220px;
-      border-radius: 50%;
-      border: 4px solid #3b82f6;
-      flex-shrink: 0;
-      object-fit: cover;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
-    }
-    #about .about-text {
-      flex: 1;
-      font-size: 1.1rem;
-      color: #374151;
-    }
-
-    /* Skills */
-    #skills {
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
-      text-align: center;
-    }
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-      margin-top: 1rem;
-    }
-    .skill-item {
-      width: 80px;
-      height: 80px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 12px;
-      background: #e0e7ff;
-      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
-      cursor: default;
-      transition: transform 0.2s;
-    }
-    .skill-item:hover {
-      transform: scale(1.1);
-    }
-    .skill-item img {
-      max-width: 50px;
-      max-height: 50px;
-    }
-
-    /* Contact */
-    #contact {
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
-      text-align: center;
-      font-size: 1.1rem;
-      color: #374151;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem 0;
-      font-size: 0.9rem;
-      color: #6b7280;
-    }
-
-    @media (max-width: 600px) {
-      #about {
-        flex-direction: column;
-        text-align: center;
-      }
-      #about img {
-        margin: 0 auto;
-      }
-    }
-  </style>
+  <title>Kaustup Dhakal | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <h1>Kaustup</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle">🌓</button>
+    </div>
   </header>
-  <main>
-    <section id="home">
-      <h1>Kaustup Dhakal</h1>
-      <p>Web Developer & Student from Nepal</p>
-      <div class="stats">
-        <div class="stat">2+ Years Experience</div>
-        <div class="stat">40+ Happy Clients</div>
-        <div class="stat">10+ Projects Completed</div>
-      </div>
-    </section>
 
-    <section id="about">
-      <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Kaustup Dhakal" />
-      <div class="about-text">
-        <p>Hello! I am Kaustup Dhakal, a passionate web developer and student dedicated to building amazing digital experiences. I enjoy learning new technologies and solving real-world problems with code.</p>
+  <section id="home">
+    <div class="overlay">
+      <div class="home-content">
+        <h2>Hello, I'm <span>Kaustup Dhakal</span></h2>
+        <p>Web Developer & Student from Nepal</p>
+        <div class="stats">
+          <div class="stat"><strong>2+</strong> Years of Experience</div>
+          <div class="stat"><strong>40+</strong> Happy Clients</div>
+          <div class="stat"><strong>10+</strong> Projects</div>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="skills">
+  <section id="about" class="fade-in">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Kaustup Dhakal" />
+        <p>
+          I'm Kaustup Dhakal, a passionate web developer who loves creating digital magic. I believe in clean code, creative design, and solving real-world problems with technology.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="fade-in">
+    <div class="container">
       <h2>Skills & Tools</h2>
       <div class="skills-grid">
-        <div class="skill-item" title="HTML5">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
-        </div>
-        <div class="skill-item" title="CSS3">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
-        </div>
-        <div class="skill-item" title="JavaScript">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
-        </div>
-        <div class="skill-item" title="React">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
-        </div>
-        <div class="skill-item" title="Git">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
-        </div>
+        <div class="skill-item" title="HTML5"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" /></div>
+        <div class="skill-item" title="CSS3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" /></div>
+        <div class="skill-item" title="JavaScript"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" /></div>
+        <div class="skill-item" title="React"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" /></div>
+        <div class="skill-item" title="Git"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" /></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact">
+  <section id="contact" class="fade-in">
+    <div class="container">
       <h2>Contact Me</h2>
-      <p>Email: <a href="mailto:kaustupdhakal000@gmail.com">kaustupdhakal000@gmail.com</a></p>
-      <p>School: Shree Janata Madhyamik Bidhyalaya</p>
-      <p>Phone: +977-XXXXXXXXXX</p>
-    </section>
-  </main>
+      <p><strong>Email:</strong> <a href="mailto:kaustupdhakal000@gmail.com">kaustupdhakal000@gmail.com</a></p>
+      <p><strong>School:</strong> Shree Janata Madhyamik Bidhyalaya</p>
+      <p><strong>Phone:</strong> +977-XXXXXXXXXX</p>
+    </div>
+  </section>
+
   <footer>
-    &copy; 2025 Kaustup Dhakal. All rights reserved.
+    <div class="container">
+      <p>&copy; 2025 Kaustup Dhakal. All rights reserved.</p>
+    </div>
   </footer>
+
+  <button id="scroll-top">&#8679;</button>
+  <script src="script.js"></script>
 </body>
 </html>
