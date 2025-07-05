@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kaustup Dhakal | Web Developer</title>
+  <style>
+    /* Reset & basic */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #f9fafb;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      color: #3b82f6;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    header {
+      background: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav ul li {
+      font-weight: 600;
+    }
+    nav ul li a {
+      font-size: 1rem;
+    }
+    main {
+      max-width: 900px;
+      margin: 100px auto 40px;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 4rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      color: #1e40af;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #1e40af;
+      border-bottom: 3px solid #3b82f6;
+      display: inline-block;
+      padding-bottom: 0.2rem;
+    }
+    /* Hero */
+    #home {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+    }
+    #home p {
+      font-size: 1.1rem;
+      margin-top: 0.8rem;
+      color: #374151;
+    }
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+    .stat {
+      background: #e0e7ff;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 700;
+      color: #1e40af;
+      min-width: 110px;
+    }
+    /* About */
+    #about {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+    #about img {
+      width: 200px;
+      border-radius: 50%;
+      border: 3px solid #3b82f6;
+      flex-shrink: 0;
+    }
+    #about .about-text {
+      flex: 1;
+      font-size: 1.1rem;
+      color: #374151;
+    }
+    /* Skills */
+    #skills {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .skill-item {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      background: #e0e7ff;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+      cursor: default;
+      transition: transform 0.2s;
+    }
+    .skill-item:hover {
+      transform: scale(1.1);
+    }
+    .skill-item img {
+      max-width: 50px;
+      max-height: 50px;
+    }
+    /* Contact */
+    #contact {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+      text-align: center;
+      font-size: 1.1rem;
+      color: #374151;
+    }
+    #contact a {
+      color: #3b82f6;
+      font-weight: 600;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    @media (max-width: 600px) {
+      #about {
+        flex-direction: column;
+        text-align: center;
+      }
+      #about img {
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="home">
+      <h1>Kaustup Dhakal</h1>
+      <p>Web Developer & Student from Nepal</p>
+      <div class="stats">
+        <div class="stat">2+ Years Experience</div>
+        <div class="stat">40+ Happy Clients</div>
+        <div class="stat">10+ Projects Completed</div>
+      </div>
+    </section>
+
+    <section id="about">
+      <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Kaustup Dhakal" />
+      <div class="about-text">
+        <p>Hello! I am Kaustup Dhakal, a passionate web developer and student dedicated to building amazing digital experiences. I enjoy learning new technologies and solving real-world problems with code.</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills & Tools</h2>
+      <div class="skills-grid">
+        <div class="skill-item" title="HTML5">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+        </div>
+        <div class="skill-item" title="CSS3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+        </div>
+        <div class="skill-item" title="JavaScript">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+        </div>
+        <div class="skill-item" title="React">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+        </div>
+        <div class="skill-item" title="Git">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:kaustupdhakal000@gmail.com">kaustupdhakal000@gmail.com</a></p>
+      <p>School: Shree Janata Madhyamik Bidhyalaya</p>
+      <p>Phone: +977-XXXXXXXXXX</p>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Kaustup Dhakal. All rights reserved.
+  </footer>
+</body>
+</html>
