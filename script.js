@@ -31,11 +31,5 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 fadeIns.forEach(el => observer.observe(el));
 
-// Background music autoplay after first interaction
-window.addEventListener("click", () => {
-  const music = document.getElementById("bg-music");
-  if (music && music.paused) {
-    music.play().catch(() => {});
-  }
-}, { once: true });
+
 
