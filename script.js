@@ -1,41 +1,40 @@
 // Theme toggle
-const toggleBtn = document.getElementById("theme-toggle");
-const body = document.body;
-const scrollBtn = document.getElementById("scroll-top");
-
-// Load saved theme from localStorage
-if (localStorage.getItem("theme") === "dark") {
-  body.classList.add("dark");
-}
-
-// Toggle dark/light mode
-if (toggleBtn) {
-  toggleBtn.addEventListener("click", () => {
-    body.classList.toggle("dark");
-    const mode = body.classList.contains("dark") ? "dark" : "light";
-    localStorage.setItem("theme", mode);
-  });
-}
-
-// Scroll to top button
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    scrollBtn.style.display = "block";
-  } else {
-    scrollBtn.style.display = "none";
-  }
-
-  // Fade in elements on scroll
-  document.querySelectorAll(".fade-in").forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      el.classList.add("show");
-    }
-  });
+const themeToggle = document.getElementById("theme-toggle");
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
 });
 
-if (scrollBtn) {
-  scrollBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+// Load saved theme
+window.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") document.body.classList.add("dark");
+
+  // Try autoplay on page load
+  const music = document.getElementById("bg-music");
+  if (music) {
+    music.play().catch(() => {
+      console.warn("Autoplay blocked. User interaction required.");
+    });
+  }
+});
+
+// Scroll to top button
+const scrollBtn = document.getElementById("scroll-top");
+window.addEventListener("scroll", () => {
+  scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+});
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Fade-in on scroll
+const fadeIns = document.querySelectorAll(".fade-in");
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
   });
-}
+}, { threshold: 0.1 });
+fadeIns.forEach(el => observer.observe(el));
