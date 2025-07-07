@@ -9,6 +9,7 @@ themeToggle.addEventListener("click", () => {
 window.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") document.body.classList.add("dark");
+ HEAD
 
   // Try autoplay on page load
   const music = document.getElementById("bg-music");
@@ -17,6 +18,7 @@ window.addEventListener("DOMContentLoaded", () => {
       console.warn("Autoplay blocked. User interaction required.");
     });
   }
+
 });
 
 // Scroll to top button
@@ -37,4 +39,6 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.1 });
+HEAD
 fadeIns.forEach(el => observer.observe(el));
+
