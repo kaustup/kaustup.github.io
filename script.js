@@ -9,7 +9,6 @@ themeToggle.addEventListener("click", () => {
 window.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") document.body.classList.add("dark");
- HEAD
 
   // Try autoplay on page load
   const music = document.getElementById("bg-music");
@@ -18,7 +17,6 @@ window.addEventListener("DOMContentLoaded", () => {
       console.warn("Autoplay blocked. User interaction required.");
     });
   }
-
 });
 
 // Scroll to top button
@@ -39,6 +37,37 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.1 });
-HEAD
+
 fadeIns.forEach(el => observer.observe(el));
 
+// Music toggle
+const musicToggle = document.getElementById("music-toggle");
+const music = document.getElementById("bg-music");
+musicToggle.addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+    musicToggle.textContent = "🔊"; // Change icon to indicate music is playing
+  } else {
+    music.pause();
+    musicToggle.textContent = "🔇"; // Change icon to indicate music is paused
+  }
+});
+
+// Modal functionality
+function openModal(modalId) {
+  document.getElementById(modalId).style.display = "block";
+}
+
+function closeModal(modalId) {
+  document.getElementById(modalId).style.display = "none";
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+  const modals = document.querySelectorAll('.modal');
+  modals.forEach(modal => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+}

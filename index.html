@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Kaustup Dhakal, a young web developer from Nepal." />
+  <meta name="keywords" content="Kaustup Dhakal, web developer, portfolio, projects, skills" />
   <meta name="google-site-verification" content="fycR5O8Fpy8vEWCSyoCM8g3DpCNEJLKX-3EtREZ7o-U" />
   <title>Kaustup Dhakal | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
@@ -23,12 +25,11 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#websites">Websites</a></li>
           <li><a href="#resume">Resume</a></li>
-          <li><a href="#websites">websites</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-
-      <button id="theme-toggle">|🌓 Change theme|</button>
+      <button id="theme-toggle" aria-label="Toggle theme">|🌓 Change theme|</button>
+      <button id="music-toggle" aria-label="Toggle music">🎵 Play music</button>
     </div>
   </header>
 
@@ -40,7 +41,7 @@
         <a href="#projects" class="btn">Explore My Work</a>
       </div>
     </div>
-  </section>
+  </section><hr>
 
   <section id="about" class="fade-in">
     <div class="container">
@@ -50,57 +51,37 @@
         <p>I’m a 13-year-old student passionate about coding, design, and creating fun digital experiences. I work on websites and games using HTML, CSS, JS, and Scratch. I’m constantly learning and improving!</p>
       </div>
     </div>
-  </section>
+  </section><hr>
 
   <section id="skills" class="fade-in">
     <div class="container">
       <h2>Skills & Tools</h2>
       <div class="skills-grid">
-        <div class="skill-item"><img src="assets/icons/html.jpeg" title="HTML" /></div>
-        <div class="skill-item"><img src="assets/icons/css.jpeg" title="CSS" /></div>
-        <div class="skill-item"><img src="assets/icons/js.jpeg" title="JavaScript" /></div>
-        <div class="skill-item"><img src="assets/icons/scratch.jpeg" title="Scratch" /></div>
-        <div class="skill-item"><img src="assets/icons/github.jpeg" title="GitHub" /></div>
-        <div class="skill-item"><img src="assets/icons/react.jpeg" title="React" /></div>
+        <div class="skill-item"><img src="assets/icons/html.jpeg" title="HTML" alt="HTML Icon" /></div>
+        <div class="skill-item"><img src="assets/icons/css.jpeg" title="CSS" alt="CSS Icon" /></div>
+        <div class="skill-item"><img src="assets/icons/js.jpeg" title="JavaScript" alt="JavaScript Icon" /></div>
+        <div class="skill-item"><img src="assets/icons/scratch.jpeg" title="Scratch" alt="Scratch Icon" /></div>
+        <div class="skill-item"><img src="assets/icons/github.jpeg" title="GitHub" alt="GitHub Icon" /></div>
+        <div class="skill-item"><img src="assets/icons/react.jpeg" title="React" alt="React Icon" /></div>
       </div>
     </div>
-  </section>
+  </section><hr>
 
-   <section id="projects" class="fade-in">
+  <section id="projects" class="fade-in">
     <div class="container">
       <h2>My Projects</h2>
       <div class="project-grid">
- HEAD
-        <div class="project-card" onclick="this.classList.toggle('expanded')">
+        <div class="project-card" onclick="openModal('chessGameModal')">
           <h3>♟ Chess Game</h3>
           <p class="short">A browser-based chess game using pure JavaScript.</p>
-          <p class="long">
-            This chess game simulates a real chess board and implements full piece logic including castling, check, checkmate, and en passant. The board is dynamically generated, and each piece follows proper rules. Built using HTML, CSS, and vanilla JavaScript.
-          </p>
         </div>
-        <div class="project-card" onclick="this.classList.toggle('expanded')">
+        <div class="project-card" onclick="openModal('spaceShooterModal')">
           <h3>🚀 Space Shooter</h3>
           <p class="short">A Scratch game with enemies and music.</p>
-          <p class="long">
-            A space-themed shooter game where players dodge meteors, destroy enemies, and level up. Created using Scratch, with custom backdrops, sprites, sound effects, and background music. Includes multiple levels, a main menu, and a game over screen.
-          </p>
-
-  
         </div>
       </div>
     </div>
-  </section>
-
-  <section id="websites" class="fade-in">
-    <div class="container">
-      <h2>Websites</h2>
-      <p>Here are some of my published web creations:</p>
-      <div class="website-links">
-        <a href="https://happyfarewellprakashsir.carrd.co" target="_blank" class="btn">🎉 Farewell to Prakash Sir</a>
-        <a href=https://students8d.carrd.co>Students of 8d</a>
-      </div>
-    </div>
-  </section>
+  </section><hr>
 
   <section id="websites" class="fade-in">
     <div class="container">
@@ -121,14 +102,13 @@
     </div>
   </section><hr>
 
-
   <section id="resume" class="fade-in">
     <div class="container">
       <h2>Resume</h2>
       <p>Download my full CV with all my projects and achievements:</p>
       <a href="Kaustup_Resume.pdf" download class="btn">📄 Download Resume</a>
     </div>
-  </section>
+  </section><hr>
 
   <section id="contact" class="fade-in">
     <div class="container">
@@ -140,18 +120,37 @@
         <button type="submit" class="btn">📨 Send Message</button>
       </form>
     </div>
-  </section>
+  </section><hr>
 
   <footer>
     <div class="container">
       <p>&copy; 2025 Kaustup Dhakal | All rights reserved</p>
     </div>
   </footer>
-<audio id="bg-music" preload="auto" loop autoplay>
-  <source src="aama.m4a" type="audio/mpeg" />
-</audio>
+
+  <audio id="bg-music" preload="auto" loop>
+    <source src="aama.m4a" type="audio/mpeg" />
+  </audio>
 
   <button id="scroll-top">⬆️</button>
+
+  <!-- Modals for Project Details -->
+  <div id="chessGameModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('chessGameModal')">&times;</span>
+      <h3>♟ Chess Game</h3>
+      <p>This chess game simulates a real chess board and implements full piece logic including castling, check, checkmate, and en passant. Built using HTML, CSS, and vanilla JavaScript.</p>
+    </div>
+  </div>
+
+  <div id="spaceShooterModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('spaceShooterModal')">&times;</span>
+      <h3>🚀 Space Shooter</h3>
+      <p>A space-themed shooter game where players dodge meteors, destroy enemies, and level up. Created using Scratch, with custom backdrops, sprites, sound effects, and background music.</p>
+    </div>
+  </div>
+<hr>
 </body>
 </html>
 

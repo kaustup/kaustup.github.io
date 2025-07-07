@@ -11,14 +11,14 @@
 }
 
 body.dark {
-  --bg: #1e1e1e;
-  --text: #f3f4f6;
-  --primary: #60a5fa;
-  --section-bg: #27272a;
-  --card-bg: #333;
-  --nav-bg: #18181b;
-  --footer-bg: #000;
-  --footer-text: #9ca3af;
+  --bg: #1e1e1e; /* Dark background */
+  --text: #f3f4f6; /* Light text */
+  --primary: #60a5fa; /* Primary color */
+  --section-bg: #27272a; /* Dark section background */
+  --card-bg: #333; /* Dark card background */
+  --nav-bg: #18181b; /* Dark nav background */
+  --footer-bg: #000; /* Dark footer background */
+  --footer-text: #9ca3af; /* Light footer text */
 }
 
 * {
@@ -90,6 +90,14 @@ nav ul li {
   color: var(--text);
 }
 
+#music-toggle {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
 /* Home */
 #home {
   background-size: cover;
@@ -98,19 +106,6 @@ nav ul li {
   display: flex;
   align-items: center;
   position: relative;
-}
-.overlay {
-  background: rgba(0, 0, 0, 0.6);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.home-content {
-  text-align: center;
-  color: white;
-  padding: 2rem;
 }
 
 .overlay {
@@ -234,8 +229,6 @@ section {
   position: relative;
   cursor: pointer;
   max-height: 180px;
-  transition: transform 0.2s, background 0.4s;
-  flex: 1 1 300px;
 }
 
 .project-card:hover {
@@ -282,12 +275,6 @@ section {
   transform: translateY(-5px);
   background: var(--primary);
   color: white;
-/* Websites */
-.website-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
 }
 
 /* Resume */
@@ -311,7 +298,6 @@ section {
 
 #contact input,
 #contact textarea {
-#contact input, #contact textarea {
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -361,6 +347,48 @@ footer {
   transform: translateY(0);
 }
 
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: var(--card-bg); /* Use the card background variable */
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  color: var(--text); /* Ensure text color is appropriate */
+}
+
+/* Dark Theme Modal Content */
+body.dark .modal-content {
+  background-color: #333; /* Dark background for modal in dark theme */
+  color: #f3f4f6; /* Light text color for better contrast */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: white; /* Change close button color on hover */
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .about-content {
@@ -374,7 +402,6 @@ footer {
   .skills-grid,
   .project-grid,
   .website-card-grid {
-  .skills-grid, .project-grid, .website-links {
     justify-content: center;
   }
-} 
+}
