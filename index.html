@@ -12,10 +12,48 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <script defer src="script.js"></script>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <style>
+    .modal { 
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 10px;
+      position: relative;
+    }
+    .close {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .skill-item {
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .skill-item:hover {
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 <body>
   <header>
-    <div class="container">
+    <div class="container">&nbsp;
       <h1>Kaustup</h1>
       <nav>
         <ul>
@@ -29,7 +67,7 @@
         </ul>
       </nav>
       <button id="theme-toggle" aria-label="Toggle theme">|🌓 Change theme|</button>
-      <button id="music-toggle" aria-label="Toggle music">🎵 Play music</button>
+      <button id="music-toggle" aria-label="Toggle music">|🎵 Play music|</button>
     </div>
   </header>
 
@@ -57,12 +95,12 @@
     <div class="container">
       <h2>Skills & Tools</h2>
       <div class="skills-grid">
-        <div class="skill-item"><img src="assets/icons/html.jpeg" title="HTML" alt="HTML Icon" /></div>
-        <div class="skill-item"><img src="assets/icons/css.jpeg" title="CSS" alt="CSS Icon" /></div>
-        <div class="skill-item"><img src="assets/icons/js.jpeg" title="JavaScript" alt="JavaScript Icon" /></div>
-        <div class="skill-item"><img src="assets/icons/scratch.jpeg" title="Scratch" alt="Scratch Icon" /></div>
-        <div class="skill-item"><img src="assets/icons/github.jpeg" title="GitHub" alt="GitHub Icon" /></div>
-        <div class="skill-item"><img src="assets/icons/react.jpeg" title="React" alt="React Icon" /></div>
+        <div class="skill-item" onclick="openModal('htmlSkillModal')"><img src="assets/icons/html.jpeg" title="HTML" alt="HTML Icon" /></div>
+        <div class="skill-item" onclick="openModal('cssSkillModal')"><img src="assets/icons/css.jpeg" title="CSS" alt="CSS Icon" /></div>
+        <div class="skill-item" onclick="openModal('jsSkillModal')"><img src="assets/icons/js.jpeg" title="JavaScript" alt="JavaScript Icon" /></div>
+        <div class="skill-item" onclick="openModal('scratchSkillModal')"><img src="assets/icons/scratch.jpeg" title="Scratch" alt="Scratch Icon" /></div>
+        <div class="skill-item" onclick="openModal('githubSkillModal')"><img src="assets/icons/github.jpeg" title="GitHub" alt="GitHub Icon" /></div>
+        <div class="skill-item" onclick="openModal('reactSkillModal')"><img src="assets/icons/react.jpeg" title="React" alt="React Icon" /></div>
       </div>
     </div>
   </section><hr>
@@ -82,7 +120,6 @@
       </div>
     </div>
   </section><hr>
-  </section>
 
   <section id="websites" class="fade-in">
     <div class="container">
@@ -151,7 +188,54 @@
       <p>A space-themed shooter game where players dodge meteors, destroy enemies, and level up. Created using Scratch, with custom backdrops, sprites, sound effects, and background music.</p>
     </div>
   </div>
-<hr>
+
+  <!-- Modals for Skill Details -->
+  <div id="htmlSkillModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('htmlSkillModal')">&times;</span>
+      <h3>HTML (HyperText Markup Language)</h3>
+      <p>HTML is the standard markup language for creating web pages and web applications. It provides the structure of content on the web, defining elements like headings, paragraphs, images, and links.</p>
+    </div>
+  </div>
+
+  <div id="cssSkillModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('cssSkillModal')">&times;</span>
+      <h3>CSS (Cascading Style Sheets)</h3>
+      <p>CSS is a style sheet language used for describing the presentation of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. It controls the layout, colors, fonts, and overall visual appearance of a website.</p>
+    </div>
+  </div>
+
+  <div id="jsSkillModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('jsSkillModal')">&times;</span>
+      <h3>JavaScript (JS)</h3>
+      <p>JavaScript is a programming language that enables interactive web pages. It allows you to implement complex features on web pages, such as interactive maps, animated graphics, and dynamic content updates. It's one of the core technologies of the World Wide Web.</p>
+    </div>
+  </div>
+
+  <div id="scratchSkillModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('scratchSkillModal')">&times;</span>
+      <h3>Scratch</h3>
+      <p>Scratch is a free visual programming language and online community where you can create your own interactive stories, games, and animations. It's designed to be a fun and easy way for beginners, especially children, to learn programming concepts.</p>
+    </div>
+  </div>
+
+  <div id="githubSkillModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('githubSkillModal')">&times;</span>
+      <h3>GitHub</h3>
+      <p>GitHub is a web-based platform that uses Git for version control. It's widely used for hosting software development projects and for collaborative coding. It allows developers to track changes, collaborate on code, and manage projects efficiently.</p>
+    </div>
+  </div>
+
+  <div id="reactSkillModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('reactSkillModal')">&times;</span>
+      <h3>React</h3>
+      <p>React is a free and open-source front-end JavaScript library for building user interfaces based on components. It's maintained by Meta and a community of individual developers and companies. React is popular for building single-page applications and mobile applications.</p>
+    </div>
+  </div>
 </body>
 </html>
-
