@@ -71,5 +71,3 @@ window.onclick = function(event) {
     }
   });
 }
-
-
