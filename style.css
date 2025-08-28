@@ -33,6 +33,7 @@ body {
   color: var(--text);
   transition: background 0.4s, color 0.4s;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 a {
@@ -199,6 +200,7 @@ section {
   justify-content: center;
   align-items: center;
   transition: transform 0.2s, background 0.4s;
+  cursor: pointer;
 }
 
 .skill-item:hover {
@@ -367,6 +369,8 @@ footer {
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
   color: var(--text); /* Ensure text color is appropriate */
+  border-radius: 10px;
+  position: relative;
 }
 
 /* Dark Theme Modal Content */
@@ -380,6 +384,10 @@ body.dark .modal-content {
   float: right;
   font-size: 28px;
   font-weight: bold;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  cursor: pointer;
 }
 
 .close:hover,
@@ -387,6 +395,222 @@ body.dark .modal-content {
   color: white; /* Change close button color on hover */
   text-decoration: none;
   cursor: pointer;
+}
+
+/* Dev Access Button */
+.dev-access-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  border-radius: 25px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.dev-access-btn:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Dev Login Panel Styles */
+#dev-login-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.dev-login-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  transition: all 0.3s ease;
+}
+
+.dev-login-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.dev-icon {
+  font-size: 4rem;
+  color: #667eea;
+  margin-bottom: 20px;
+}
+
+.dev-login-container h2 {
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.dev-input-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.dev-input-group input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.dev-input-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.dev-login-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.dev-login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.dev-error-message {
+  color: #e74c3c;
+  margin-top: 15px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dev-error-message.show {
+  opacity: 1;
+}
+
+.dev-panel {
+  display: none;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+}
+
+.dev-panel.active {
+  display: block;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-icon {
+  font-size: 4rem;
+  color: #27ae60;
+  margin-bottom: 20px;
+}
+
+.dev-download-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin: 20px 10px;
+  cursor: pointer;
+}
+
+.dev-download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(39, 174, 96, 0.3);
+}
+
+.dev-back-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin: 20px 10px;
+}
+
+.dev-back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(149, 165, 166, 0.3);
+}
+
+.file-info {
+  background: rgba(102, 126, 234, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  border-left: 4px solid #667eea;
+}
+
+.file-info p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.section-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
 /* Responsive */
@@ -404,19 +628,6 @@ body.dark .modal-content {
   .website-card-grid {
     justify-content: center;
   }
-}
-body {
-  overflow-x: hidden;
-}
-
-.section-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-@media (max-width: 768px) {
   .hero, .section-wrapper {
     flex-direction: column;
     align-items: center;
@@ -425,5 +636,3 @@ body {
     width: 90%;
   }
 }
-
-
