@@ -13,64 +13,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <script defer src="script.js"></script>
   <link rel="icon" href="favicon.png" type="image/png" />
-  <style>
-    body {
-  overflow-x: hidden;
-}
-
-.section-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-@media (max-width: 768px) {
-  .hero, .section-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-  .project-card, .website-card {
-    width: 90%;
-  }
-}
-
-    .modal { 
-      display: none;
-      position: fixed;
-      z-index: 100;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.8);
-    }
-    .modal-content {
-      background-color: #fefefe;
-      margin: 10% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      max-width: 600px;
-      border-radius: 10px;
-      position: relative;
-    }
-    .close {
-      position: absolute;
-      right: 20px;
-      top: 10px;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .skill-item {
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-    .skill-item:hover {
-      transform: scale(1.1);
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -107,7 +49,7 @@
       <h2>About Me</h2>
       <div class="about-content">
         <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Kaustup Dhakal" />
-        <p>I’m a 13-year-old student passionate about coding, design, and creating fun digital experiences. I work on websites and games using HTML, CSS, JS, and Scratch. I’m constantly learning and improving!</p>
+        <p>I'm a 13-year-old student passionate about coding, design, and creating fun digital experiences. I work on websites and games using HTML, CSS, JS, and Scratch. I'm constantly learning and improving!</p>
       </div>
     </div>
   </section><hr>
@@ -192,6 +134,39 @@
   </audio>
 
   <button id="scroll-top">⬆️</button>
+
+  <!-- Dev Access Button -->
+  <button class="dev-access-btn" onclick="openDevLogin()">🔧 Dev</button>
+
+  <!-- Dev Login Overlay -->
+  <div id="dev-login-overlay">
+    <div class="dev-login-container" id="devLoginContainer">
+      <div class="dev-icon">🔧</div>
+      <h2>Developer Access</h2>
+      <div class="dev-input-group">
+        <input type="password" id="devPasswordInput" placeholder="Enter developer password" maxlength="4">
+      </div>
+      <button class="dev-login-btn" onclick="checkDevPassword()">Access</button>
+      <div class="dev-error-message" id="devErrorMessage">Invalid password. Please try again.</div>
+    </div>
+
+    <div class="dev-panel" id="devPanel">
+      <div class="success-icon">✅</div>
+      <h2>Developer Panel</h2>
+      <p>Welcome to the developer section!</p>
+      
+      <div class="file-info">
+        <h3>📁 Available Download</h3>
+        <p><strong>File:</strong> school.zip</p>
+        <p><strong>Type:</strong> Archive</p>
+        <p><strong>Status:</strong> Ready for download</p>
+      </div>
+      
+      <button class="dev-download-btn" onclick="downloadSchoolFile()">📥 Download school.zip</button>
+      <button class="dev-back-btn" onclick="backToLogin()">← Back to Login</button>
+      <button class="dev-back-btn" onclick="closeDevLogin()">✕ Close Panel</button>
+    </div>
+  </div>
 
   <!-- Modals for Project Details -->
   <div id="chessGameModal" class="modal">
