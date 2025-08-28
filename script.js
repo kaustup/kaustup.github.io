@@ -9,7 +9,6 @@ themeToggle.addEventListener("click", () => {
 window.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") document.body.classList.add("dark");
-
   // Try autoplay on page load
   const music = document.getElementById("bg-music");
   if (music) {
@@ -37,7 +36,6 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.1 });
-
 fadeIns.forEach(el => observer.observe(el));
 
 // Music toggle
@@ -71,3 +69,118 @@ window.onclick = function(event) {
     }
   });
 }
+
+// Dev Login Panel Functions
+function openDevLogin() {
+  document.getElementById("dev-login-overlay").style.display = "flex";
+  document.getElementById("devPasswordInput").focus();
+}
+
+function closeDevLogin() {
+  document.getElementById("dev-login-overlay").style.display = "none";
+  resetDevLogin();
+}
+
+function checkDevPassword() {
+  const password = document.getElementById("devPasswordInput").value;
+  const errorMessage = document.getElementById("devErrorMessage");
+  const loginContainer = document.getElementById("devLoginContainer");
+  const devPanel = document.getElementById("devPanel");
+  
+  if (password === "4153") {
+    // Correct password
+    loginContainer.style.display = "none";
+    devPanel.classList.add("active");
+    errorMessage.classList.remove("show");
+  } else {
+    // Wrong password
+    errorMessage.classList.add("show");
+    document.getElementById("devPasswordInput").value = "";
+    
+    // Shake animation for error feedback
+    loginContainer.style.animation = "shake 0.5s ease-in-out";
+    setTimeout(() => {
+      loginContainer.style.animation = "";
+    }, 500);
+  }
+}
+
+function backToLogin() {
+  const loginContainer = document.getElementById("devLoginContainer");
+  const devPanel = document.getElementById("devPanel");
+  
+  devPanel.classList.remove("active");
+  loginContainer.style.display = "block";
+  document.getElementById("devPasswordInput").value = "";
+  document.getElementById("devErrorMessage").classList.remove("show");
+}
+
+function resetDevLogin() {
+  const loginContainer = document.getElementById("devLoginContainer");
+  const devPanel = document.getElementById("devPanel");
+  
+  loginContainer.style.display = "block";
+  devPanel.classList.remove("active");
+  document.getElementById("devPasswordInput").value = "";
+  document.getElementById("devErrorMessage").classList.remove("show");
+}
+
+function downloadSchoolFile() {
+  // Create a dummy file for download
+  // In a real scenario, you would have the actual school.zip file on your server
+  const link = document.createElement('a');
+  
+  // Check if school.zip exists, otherwise create a dummy download
+  fetch('school.zip')
+    .then(response => {
+      if (response.ok) {
+        // File exists, download it
+        link.href = 'school.zip';
+        link.download = 'school.zip';
+        link.click();
+      } else {
+        // File doesn't exist, show a message or create dummy content
+        alert('school.zip file not found on server. Please make sure to upload the school.zip file to your website root directory.');
+      }
+    })
+    .catch(() => {
+      // Network error or file doesn't exist
+      alert('school.zip file not found. Please make sure to upload the school.zip file to your website root directory.');
+    });
+}
+
+// Allow Enter key to submit password
+document.addEventListener("DOMContentLoaded", () => {
+  const passwordInput = document.getElementById("devPasswordInput");
+  if (passwordInput) {
+    passwordInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        checkDevPassword();
+      }
+    });
+  }
+});
+
+// Close dev login with Escape key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    const devLoginOverlay = document.getElementById("dev-login-overlay");
+    if (devLoginOverlay.style.display === "flex") {
+      closeDevLogin();
+    }
+  }
+});
+
+// Add shake animation CSS dynamically
+const shakeCSS = `
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+`;
+
+// Inject the shake animation CSS
+const style = document.createElement('style');
+style.textContent = shakeCSS;
+document.head.appendChild(style);
