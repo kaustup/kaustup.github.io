@@ -1,5 +1,3 @@
-
-<<<<<<< HEAD
 // Load saved theme
 window.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
@@ -179,5 +177,4 @@ const shakeCSS = `
 const style = document.createElement('style');
 style.textContent = shakeCSS;
 document.head.appendChild(style);
-=======
->>>>>>> 7fbbc55f5b4cddda1194ffecf6b14c480d125e55
+
