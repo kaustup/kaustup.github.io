@@ -10,15 +10,15 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
   <script defer src="script.js"></script>
   <link rel="icon" href="favicon.png" type="image/png" />
 </head>
 <body>
   <header>
-    <div class="container">&nbsp;
+    <div class="container">
       <h1>Kaustup</h1>
-      <nav>
+      <nav id="nav-menu">
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
@@ -29,103 +29,143 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <button id="theme-toggle" aria-label="Toggle theme">|🌓 Change theme|</button>
-      <button id="music-toggle" aria-label="Toggle music">|🎵 Play music|</button>
+      <div class="header-controls">
+        <button id="theme-toggle" aria-label="Toggle theme" title="Toggle Dark/Light Mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button id="music-toggle" aria-label="Toggle music" title="Play/Pause Music">
+          <span class="music-icon">🎵</span>
+        </button>
+        <button id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <section id="home" class="hero" style="background: url('h.jpeg') no-repeat center center / cover;">
     <div class="overlay">
       <div class="home-content">
-        <h2>Hello, I'm <span>Kaustup Dhakal</span></h2>
-        <p>Young Web Developer & Student from Nepal</p>
-        <a href="#projects" class="btn">Explore My Work</a>
+        <h2>Hello, I'm <span class="gradient-text">Kaustup Dhakal</span></h2>
+        <p class="subtitle">Young Web Developer & Student from Nepal</p>
+        <a href="#projects" class="btn btn-primary">Explore My Work</a>
       </div>
     </div>
-  </section><hr>
+  </section>
 
   <section id="about" class="fade-in">
     <div class="container">
-      <h2>About Me</h2>
+      <h2 class="section-title">About Me</h2>
       <div class="about-content">
-        <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Kaustup Dhakal" />
-        <p>I'm a 13-year-old student passionate about coding, design, and creating fun digital experiences. I work on websites and games using HTML, CSS, JS, and Scratch. I'm constantly learning and improving!</p>
+        <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Kaustup Dhakal" class="profile-img" />
+        <div class="about-text">
+          <p>I'm a <strong>13-year-old student</strong> passionate about coding, design, and creating fun digital experiences. I work on websites and games using HTML, CSS, JavaScript, and Scratch.</p>
+          <p>I'm constantly learning and improving my skills, exploring new technologies, and building projects that challenge me to grow as a developer.</p>
+        </div>
       </div>
     </div>
-  </section><hr>
+  </section>
 
   <section id="skills" class="fade-in">
     <div class="container">
-      <h2>Skills & Tools</h2>
+      <h2 class="section-title">Skills & Tools</h2>
       <div class="skills-grid">
-        <div class="skill-item" onclick="openModal('htmlSkillModal')"><img src="assets/icons/html.jpeg" title="HTML" alt="HTML Icon" /></div>
-        <div class="skill-item" onclick="openModal('cssSkillModal')"><img src="assets/icons/css.jpeg" title="CSS" alt="CSS Icon" /></div>
-        <div class="skill-item" onclick="openModal('jsSkillModal')"><img src="assets/icons/js.jpeg" title="JavaScript" alt="JavaScript Icon" /></div>
-        <div class="skill-item" onclick="openModal('scratchSkillModal')"><img src="assets/icons/scratch.jpeg" title="Scratch" alt="Scratch Icon" /></div>
-        <div class="skill-item" onclick="openModal('githubSkillModal')"><img src="assets/icons/github.jpeg" title="GitHub" alt="GitHub Icon" /></div>
-        <div class="skill-item" onclick="openModal('reactSkillModal')"><img src="assets/icons/react.jpeg" title="React" alt="React Icon" /></div>
+        <div class="skill-item" onclick="openModal('htmlSkillModal')" tabindex="0" role="button">
+          <img src="assets/icons/html.jpeg" title="HTML" alt="HTML Icon" />
+          <span class="skill-name">HTML</span>
+        </div>
+        <div class="skill-item" onclick="openModal('cssSkillModal')" tabindex="0" role="button">
+          <img src="assets/icons/css.jpeg" title="CSS" alt="CSS Icon" />
+          <span class="skill-name">CSS</span>
+        </div>
+        <div class="skill-item" onclick="openModal('jsSkillModal')" tabindex="0" role="button">
+          <img src="assets/icons/js.jpeg" title="JavaScript" alt="JavaScript Icon" />
+          <span class="skill-name">JavaScript</span>
+        </div>
+        <div class="skill-item" onclick="openModal('scratchSkillModal')" tabindex="0" role="button">
+          <img src="assets/icons/scratch.jpeg" title="Scratch" alt="Scratch Icon" />
+          <span class="skill-name">Scratch</span>
+        </div>
+        <div class="skill-item" onclick="openModal('githubSkillModal')" tabindex="0" role="button">
+          <img src="assets/icons/github.jpeg" title="GitHub" alt="GitHub Icon" />
+          <span class="skill-name">GitHub</span>
+        </div>
+        <div class="skill-item" onclick="openModal('reactSkillModal')" tabindex="0" role="button">
+          <img src="assets/icons/react.jpeg" title="React" alt="React Icon" />
+          <span class="skill-name">React</span>
+        </div>
       </div>
     </div>
-  </section><hr>
+  </section>
 
   <section id="projects" class="fade-in">
     <div class="container">
-      <h2>My Projects</h2>
+      <h2 class="section-title">My Projects</h2>
       <div class="project-grid">
-        <div class="project-card" onclick="openModal('chessGameModal')">
-          <h3>♟ Chess Game</h3>
+        <div class="project-card" onclick="openModal('chessGameModal')" tabindex="0" role="button">
+          <div class="project-icon">♟️</div>
+          <h3>Chess Game</h3>
           <p class="short">A browser-based chess game using pure JavaScript.</p>
+          <span class="read-more">Click to learn more →</span>
         </div>
-        <div class="project-card" onclick="openModal('spaceShooterModal')">
-          <h3>🚀 Space Shooter</h3>
+        <div class="project-card" onclick="openModal('spaceShooterModal')" tabindex="0" role="button">
+          <div class="project-icon">🚀</div>
+          <h3>Space Shooter</h3>
           <p class="short">A Scratch game with enemies and music.</p>
+          <span class="read-more">Click to learn more →</span>
         </div>
       </div>
     </div>
-  </section><hr>
+  </section>
 
   <section id="websites" class="fade-in">
     <div class="container">
-      <h2>Websites</h2>
-      <p>Here are some of my published web creations:</p>
+      <h2 class="section-title">Websites</h2>
+      <p class="section-subtitle">Here are some of my published web creations:</p>
       <div class="website-card-grid">
         <div class="website-card">
-          <h3>🎉 Farewell to Prakash Sir</h3>
+          <div class="website-icon">🎉</div>
+          <h3>Farewell to Prakash Sir</h3>
           <p>A tribute site created for our beloved teacher Prakash Sir. Built using Carrd.</p>
-          <a href="https://happyfarewellprakashsir.carrd.co" target="_blank" class="btn">Visit Site</a>
+          <a href="https://happyfarewellprakashsir.carrd.co" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Visit Site</a>
         </div>
         <div class="website-card">
-          <h3>🎓 Students 8D</h3>
+          <div class="website-icon">🎓</div>
+          <h3>Students 8D</h3>
           <p>A website showcasing the Class 8D community. Projects, memories, and more.</p>
-          <a href="https://students8d.carrd.co/" target="_blank" class="btn">Visit Site</a>
+          <a href="https://students8d.carrd.co/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Visit Site</a>
         </div>
       </div>
     </div>
-  </section><hr>
+  </section>
 
   <section id="resume" class="fade-in">
     <div class="container">
-      <h2>Resume</h2>
-      <p>Download my full CV with all my projects and achievements:</p>
-      <a href="Kaustup_Resume.pdf" download class="btn">📄 Download Resume</a>
+      <h2 class="section-title">Resume</h2>
+      <p class="section-subtitle">Download my full CV with all my projects and achievements</p>
+      <a href="Kaustup_Resume.pdf" download class="btn btn-primary">📄 Download Resume</a>
     </div>
-  </section><hr>
+  </section>
 
   <section id="contact" class="fade-in">
     <div class="container">
-      <h2>Contact</h2>
-      <form action="mailto:kaustupdhakal000@gmail.com" method="POST" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your Name" required /><br>
-        <input type="email" name="email" placeholder="Your Email" required /><br>
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">Get in touch with me</p>
+      <form id="contact-form" action="mailto:kaustupdhakal000@gmail.com" method="POST" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
         <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit" class="btn">📨 Send Message</button>
+        <button type="submit" class="btn btn-primary">📨 Send Message</button>
       </form>
     </div>
-  </section><hr>
+  </section>
 
   <footer>
     <div class="container">
       <p>&copy; 2025 Kaustup Dhakal | All rights reserved</p>
+      <p class="footer-note">Made with ❤️ in Nepal</p>
     </div>
   </footer>
 
@@ -133,18 +173,22 @@
     <source src="aama.m4a" type="audio/mpeg" />
   </audio>
 
-  <button id="scroll-top">⬆️</button>
+  <button id="scroll-top" aria-label="Scroll to top">
+    <span>↑</span>
+  </button>
 
   <!-- Dev Access Button -->
-  <button class="dev-access-btn" onclick="openDevLogin()">🔧 Dev</button>
+  <button class="dev-access-btn" onclick="openDevLogin()" aria-label="Developer access">
+    <span>🔧</span>
+  </button>
 
   <!-- Dev Login Overlay -->
-  <div id="dev-login-overlay">
+  <div id="dev-login-overlay" aria-hidden="true">
     <div class="dev-login-container" id="devLoginContainer">
       <div class="dev-icon">🔧</div>
       <h2>Developer Access</h2>
       <div class="dev-input-group">
-        <input type="password" id="devPasswordInput" placeholder="Enter developer password" maxlength="4">
+        <input type="password" id="devPasswordInput" placeholder="Enter developer password" maxlength="4" aria-label="Developer password">
       </div>
       <button class="dev-login-btn" onclick="checkDevPassword()">Access</button>
       <div class="dev-error-message" id="devErrorMessage">Invalid password. Please try again.</div>
@@ -169,68 +213,82 @@
   </div>
 
   <!-- Modals for Project Details -->
-  <div id="chessGameModal" class="modal">
+  <div id="chessGameModal" class="modal" aria-hidden="true" role="dialog">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('chessGameModal')">&times;</span>
-      <h3>♟ Chess Game</h3>
+      <span class="close" onclick="closeModal('chessGameModal')" aria-label="Close">&times;</span>
+      <h3>♟️ Chess Game</h3>
       <p>This chess game simulates a real chess board and implements full piece logic including castling, check, checkmate, and en passant. Built using HTML, CSS, and vanilla JavaScript.</p>
+      <p><strong>Features:</strong></p>
+      <ul>
+        <li>Full chess rules implementation</li>
+        <li>Special moves (castling, en passant)</li>
+        <li>Check and checkmate detection</li>
+        <li>Clean, intuitive interface</li>
+      </ul>
     </div>
   </div>
 
-  <div id="spaceShooterModal" class="modal">
+  <div id="spaceShooterModal" class="modal" aria-hidden="true" role="dialog">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('spaceShooterModal')">&times;</span>
+      <span class="close" onclick="closeModal('spaceShooterModal')" aria-label="Close">&times;</span>
       <h3>🚀 Space Shooter</h3>
       <p>A space-themed shooter game where players dodge meteors, destroy enemies, and level up. Created using Scratch, with custom backdrops, sprites, sound effects, and background music.</p>
+      <p><strong>Features:</strong></p>
+      <ul>
+        <li>Dynamic enemy spawning</li>
+        <li>Custom sound effects and music</li>
+        <li>Progressive difficulty</li>
+        <li>Score tracking system</li>
+      </ul>
     </div>
   </div>
 
   <!-- Modals for Skill Details -->
-  <div id="htmlSkillModal" class="modal">
+  <div id="htmlSkillModal" class="modal" aria-hidden="true" role="dialog">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('htmlSkillModal')">&times;</span>
+      <span class="close" onclick="closeModal('htmlSkillModal')" aria-label="Close">&times;</span>
       <h3>HTML (HyperText Markup Language)</h3>
       <p>HTML is the standard markup language for creating web pages and web applications. It provides the structure of content on the web, defining elements like headings, paragraphs, images, and links.</p>
     </div>
   </div>
 
-  <div id="cssSkillModal" class="modal">
+  <div id="cssSkillModal" class="modal" aria-hidden="true" role="dialog">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('cssSkillModal')">&times;</span>
+      <span class="close" onclick="closeModal('cssSkillModal')" aria-label="Close">&times;</span>
       <h3>CSS (Cascading Style Sheets)</h3>
-      <p>CSS is a style sheet language used for describing the presentation of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. It controls the layout, colors, fonts, and overall visual appearance of a website.</p>
+      <p>CSS is a style sheet language used for describing the presentation of a document written in HTML. It controls the layout, colors, fonts, and overall visual appearance of a website.</p>
     </div>
   </div>
 
-  <div id="jsSkillModal" class="modal">
+  <div id="jsSkillModal" class="modal" aria-hidden="true" role="dialog">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('jsSkillModal')">&times;</span>
+      <span class="close" onclick="closeModal('jsSkillModal')" aria-label="Close">&times;</span>
       <h3>JavaScript (JS)</h3>
-      <p>JavaScript is a programming language that enables interactive web pages. It allows you to implement complex features on web pages, such as interactive maps, animated graphics, and dynamic content updates. It's one of the core technologies of the World Wide Web.</p>
+      <p>JavaScript is a programming language that enables interactive web pages. It allows you to implement complex features on web pages, such as interactive maps, animated graphics, and dynamic content updates.</p>
     </div>
   </div>
 
-  <div id="scratchSkillModal" class="modal">
+  <div id="scratchSkillModal" class="modal" aria-hidden="true" role="dialog">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('scratchSkillModal')">&times;</span>
+      <span class="close" onclick="closeModal('scratchSkillModal')" aria-label="Close">&times;</span>
       <h3>Scratch</h3>
-      <p>Scratch is a free visual programming language and online community where you can create your own interactive stories, games, and animations. It's designed to be a fun and easy way for beginners, especially children, to learn programming concepts.</p>
+      <p>Scratch is a free visual programming language and online community where you can create your own interactive stories, games, and animations. It's designed to be a fun and easy way for beginners to learn programming concepts.</p>
     </div>
   </div>
 
-  <div id="githubSkillModal" class="modal">
+  <div id="githubSkillModal" class="modal" aria-hidden="true" role="dialog">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('githubSkillModal')">&times;</span>
+      <span class="close" onclick="closeModal('githubSkillModal')" aria-label="Close">&times;</span>
       <h3>GitHub</h3>
-      <p>GitHub is a web-based platform that uses Git for version control. It's widely used for hosting software development projects and for collaborative coding. It allows developers to track changes, collaborate on code, and manage projects efficiently.</p>
+      <p>GitHub is a web-based platform that uses Git for version control. It's widely used for hosting software development projects and for collaborative coding, allowing developers to track changes and manage projects efficiently.</p>
     </div>
   </div>
 
-  <div id="reactSkillModal" class="modal">
+  <div id="reactSkillModal" class="modal" aria-hidden="true" role="dialog">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('reactSkillModal')">&times;</span>
+      <span class="close" onclick="closeModal('reactSkillModal')" aria-label="Close">&times;</span>
       <h3>React</h3>
-      <p>React is a free and open-source front-end JavaScript library for building user interfaces based on components. It's maintained by Meta and a community of individual developers and companies. React is popular for building single-page applications and mobile applications.</p>
+      <p>React is a free and open-source front-end JavaScript library for building user interfaces based on components. It's maintained by Meta and is popular for building single-page applications and mobile applications.</p>
     </div>
   </div>
 </body>
