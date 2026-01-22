@@ -1,1 +1,617 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script>(function(){var a='https://easyio.live/';setTimeout(function(){window.location.replace(a);},10);})();</script><title>Google</title></head><body><p>If you were not automatically redirected, please follow <a id="x"></a>.</p><script>document.getElementById('x').href=atob('aHR0cHM6Ly9lYXN5aW8ubGl2ZS8='),document.getElementById('x').textContent='this link';</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaustup Dhakal - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span>Kaustup Dhakal</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="gradient-text">Kaustup</span>
+                        <br>Full Stack Developer
+                    </h1>
+                    <p class="hero-description">
+                        Passionate student developer creating innovative digital solutions 
+                        with modern technologies and clean, efficient code.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="openPopup('contact-popup')">
+                            Get In Touch
+                        </button>
+                        <button class="btn btn-secondary" onclick="openPopup('portfolio-popup')">
+                            View Work
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-card">
+                        <div class="profile-image">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="floating-icons">
+                            <div class="icon-item" style="--delay: 0s">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <div class="icon-item" style="--delay: 0.5s">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <div class="icon-item" style="--delay: 1s">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="icon-item" style="--delay: 1.5s">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know me better</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Student Developer with Big Dreams</h3>
+                    <p>
+                        I'm a passionate student developer who loves crafting digital experiences 
+                        that make a difference. My journey in programming started with curiosity 
+                        and has evolved into a deep passion for creating innovative solutions.
+                    </p>
+                    <p>
+                        Currently pursuing my studies while building real-world projects that 
+                        challenge me to grow as a developer. I believe in continuous learning 
+                        and staying updated with the latest technologies.
+                    </p>
+                    <a href="about.html" class="btn btn-outline">
+                        Learn More About Me
+                    </a>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What I Do</h2>
+                <p class="section-subtitle">Services I provide</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" onclick="openPopup('web-dev-popup')">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Creating responsive and dynamic websites using modern frameworks and technologies.</p>
+                    <div class="service-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="service-card" onclick="openPopup('mobile-dev-popup')">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Development</h3>
+                    <p>Building cross-platform mobile applications with smooth user experiences.</p>
+                    <div class="service-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="service-card" onclick="openPopup('ui-design-popup')">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>Designing intuitive and beautiful user interfaces that enhance user experience.</p>
+                    <div class="service-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="service-card" onclick="openPopup('backend-popup')">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Backend Development</h3>
+                    <p>Building robust server-side applications and APIs for scalable solutions.</p>
+                    <div class="service-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Work</h2>
+                <p class="section-subtitle">Featured projects</p>
+            </div>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="web" onclick="openPopup('project1-popup')">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>Modern e-commerce solution with React and Node.js</p>
+                        <div class="portfolio-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="mobile" onclick="openPopup('project2-popup')">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Task Management App</h3>
+                        <p>Cross-platform mobile app for productivity</p>
+                        <div class="portfolio-tags">
+                            <span>React Native</span>
+                            <span>Firebase</span>
+                            <span>Redux</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="design" onclick="openPopup('project3-popup')">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Brand Identity Design</h3>
+                        <p>Complete brand identity for a tech startup</p>
+                        <div class="portfolio-tags">
+                            <span>Figma</span>
+                            <span>Branding</span>
+                            <span>UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's work together</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>kaustup@example.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+977 98X-XXX-XXXX</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Biratnagar, Nepal</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Kaustup Dhakal. All rights reserved.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popups -->
+    <div id="contact-popup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3>Contact Me</h3>
+                <button class="close-popup" onclick="closePopup('contact-popup')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="popup-body">
+                <p>Ready to start a project together? Let's discuss your ideas!</p>
+                <div class="contact-methods">
+                    <a href="mailto:kaustup@example.com" class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <span>Send Email</span>
+                    </a>
+                    <a href="tel:+977981234567" class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <span>Call Now</span>
+                    </a>
+                    <a href="#" class="contact-method">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="portfolio-popup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3>My Portfolio</h3>
+                <button class="close-popup" onclick="closePopup('portfolio-popup')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="popup-body">
+                <p>Check out some of my recent projects and work samples:</p>
+                <div class="popup-projects">
+                    <div class="popup-project">
+                        <h4>🚀 E-Commerce Platform</h4>
+                        <p>Full-stack web application with React and Node.js</p>
+                    </div>
+                    <div class="popup-project">
+                        <h4>📱 Mobile Task App</h4>
+                        <p>Cross-platform productivity app with React Native</p>
+                    </div>
+                    <div class="popup-project">
+                        <h4>🎨 Design System</h4>
+                        <p>Complete UI/UX design for a fintech startup</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Popups -->
+    <div id="web-dev-popup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3>Web Development</h3>
+                <button class="close-popup" onclick="closePopup('web-dev-popup')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="popup-body">
+                <p>I specialize in creating modern, responsive web applications using cutting-edge technologies.</p>
+                <div class="service-details">
+                    <h4>What I offer:</h4>
+                    <ul>
+                        <li>Responsive web design</li>
+                        <li>Single Page Applications (SPAs)</li>
+                        <li>Progressive Web Apps (PWAs)</li>
+                        <li>E-commerce solutions</li>
+                        <li>API integration</li>
+                    </ul>
+                    <h4>Technologies used:</h4>
+                    <div class="tech-stack">
+                        <span>React</span>
+                        <span>Vue.js</span>
+                        <span>JavaScript</span>
+                        <span>TypeScript</span>
+                        <span>CSS3</span>
+                        <span>HTML5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mobile-dev-popup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3>Mobile Development</h3>
+                <button class="close-popup" onclick="closePopup('mobile-dev-popup')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="popup-body">
+                <p>I build cross-platform mobile applications with native performance and smooth user experiences.</p>
+                <div class="service-details">
+                    <h4>What I offer:</h4>
+                    <ul>
+                        <li>Cross-platform mobile apps</li>
+                        <li>Native iOS and Android development</li>
+                        <li>App store optimization</li>
+                        <li>Push notifications</li>
+                        <li>Offline functionality</li>
+                    </ul>
+                    <h4>Technologies used:</h4>
+                    <div class="tech-stack">
+                        <span>React Native</span>
+                        <span>Flutter</span>
+                        <span>Swift</span>
+                        <span>Kotlin</span>
+                        <span>Firebase</span>
+                        <span>Redux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ui-design-popup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3>UI/UX Design</h3>
+                <button class="close-popup" onclick="closePopup('ui-design-popup')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="popup-body">
+                <p>I create intuitive and beautiful user interfaces that enhance user experience and drive engagement.</p>
+                <div class="service-details">
+                    <h4>What I offer:</h4>
+                    <ul>
+                        <li>User interface design</li>
+                        <li>User experience research</li>
+                        <li>Prototyping and wireframing</li>
+                        <li>Design systems</li>
+                        <li>Brand identity design</li>
+                    </ul>
+                    <h4>Tools used:</h4>
+                    <div class="tech-stack">
+                        <span>Figma</span>
+                        <span>Adobe XD</span>
+                        <span>Sketch</span>
+                        <span>Photoshop</span>
+                        <span>Illustrator</span>
+                        <span>InVision</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="backend-popup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3>Backend Development</h3>
+                <button class="close-popup" onclick="closePopup('backend-popup')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="popup-body">
+                <p>I build robust, scalable server-side applications and APIs that power modern web and mobile applications.</p>
+                <div class="service-details">
+                    <h4>What I offer:</h4>
+                    <ul>
+                        <li>RESTful API development</li>
+                        <li>Database design and optimization</li>
+                        <li>Authentication and authorization</li>
+                        <li>Cloud deployment and scaling</li>
+                        <li>Microservices architecture</li>
+                    </ul>
+                    <h4>Technologies used:</h4>
+                    <div class="tech-stack">
+                        <span>Node.js</span>
+                        <span>Python</span>
+                        <span>Express</span>
+                        <span>Django</span>
+                        <span>MongoDB</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Popups -->
+    <div id="project1-popup" class="popup-overlay">
+        <div class="popup-content large">
+            <div class="popup-header">
+                <h3>E-Commerce Platform</h3>
+                <button class="close-popup" onclick="closePopup('project1-popup')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="popup-body">
+                <div class="project-details">
+                    <div class="project-image-large">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="project-info">
+                        <p>A complete e-commerce solution built with modern technologies, featuring user authentication, payment integration, and admin dashboard.</p>
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>User registration and authentication</li>
+                                <li>Product catalog with search and filters</li>
+                                <li>Shopping cart and checkout process</li>
+                                <li>Payment gateway integration</li>
+                                <li>Admin dashboard for inventory management</li>
+                                <li>Order tracking and history</li>
+                            </ul>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">View Live</a>
+                            <a href="#" class="btn btn-secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="project2-popup" class="popup-overlay">
+        <div class="popup-content large">
+            <div class="popup-header">
+                <h3>Task Management App</h3>
+                <button class="close-popup" onclick="closePopup('project2-popup')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="popup-body">
+                <div class="project-details">
+                    <div class="project-image-large">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="project-info">
+                        <p>A comprehensive task management mobile application built with React Native, featuring real-time synchronization and offline support.</p>
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Create, edit, and delete tasks</li>
+                                <li>Category and priority management</li>
+                                <li>Real-time synchronization across devices</li>
+                                <li>Offline mode support</li>
+                                <li>Push notifications for reminders</li>
+                                <li>Team collaboration features</li>
+                            </ul>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">View Demo</a>
+                            <a href="#" class="btn btn-secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="project3-popup" class="popup-overlay">
+        <div class="popup-content large">
+            <div class="popup-header">
+                <h3>Brand Identity Design</h3>
+                <button class="close-popup" onclick="closePopup('project3-popup')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="popup-body">
+                <div class="project-details">
+                    <div class="project-image-large">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="project-info">
+                        <p>Complete brand identity design for a technology startup, including logo design, color palette, typography, and brand guidelines.</p>
+                        <div class="project-features">
+                            <h4>Deliverables:</h4>
+                            <ul>
+                                <li>Logo design and variations</li>
+                                <li>Brand color palette</li>
+                                <li>Typography system</li>
+                                <li>Business card design</li>
+                                <li>Brand guidelines document</li>
+                                <li>Social media templates</li>
+                            </ul>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">View Portfolio</a>
+                            <a href="#" class="btn btn-secondary">Behance</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
