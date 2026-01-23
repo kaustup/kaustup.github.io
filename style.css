@@ -1747,7 +1747,7 @@ footer p {
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(20px);
   text-align: center;
-  max-width: 600px;
+  max-width: 700px;
   width: 90%;
   border: 3px solid rgba(255, 255, 255, 0.3);
 }
@@ -1800,40 +1800,250 @@ footer p {
   animation: fadeSlideUp 0.6s ease 0.3s both;
 }
 
-.file-info {
-  background: rgba(102, 126, 234, 0.1);
-  padding: 2rem;
-  border-radius: 16px;
+/* Dev Menu Options */
+.dev-menu-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
   margin: 2rem 0;
-  border-left: 5px solid #667eea;
-  text-align: left;
-  animation: fadeSlideUp 0.6s ease 0.4s both;
+}
+
+.dev-option-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border: 2px solid transparent;
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: fadeSlideUp 0.6s ease both;
+}
+
+.dev-option-card:nth-child(1) { animation-delay: 0.4s; }
+.dev-option-card:nth-child(2) { animation-delay: 0.5s; }
+.dev-option-card:nth-child(3) { animation-delay: 0.6s; }
+
+.dev-option-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.dev-option-card:hover::before {
+  opacity: 0.1;
+}
+
+.dev-option-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: #667eea;
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+  background: white;
+}
+
+.dev-option-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.option-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dev-option-card:hover .option-icon {
+  transform: scale(1.2) rotate(360deg);
+}
+
+.dev-option-card h3 {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
   transition: all 0.3s ease;
 }
 
-.file-info:hover {
-  transform: translateX(5px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
-}
-
-.file-info h3 {
-  margin-bottom: 1.2rem;
+.dev-option-card:hover h3 {
   color: #667eea;
-  font-size: 1.3rem;
 }
 
-.file-info p {
-  margin: 0.8rem 0;
-  color: #555;
+.dev-option-card p {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
   animation: none;
 }
 
-.file-info p strong {
-  color: #333;
-  font-weight: 700;
+.option-hint {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #999;
+  font-weight: 600;
 }
 
-.dev-download-btn,
+/* Password Modal Styles */
+.password-modal .modal-content {
+  max-width: 500px;
+  padding: 2.5rem;
+}
+
+.modal-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  animation: fadeSlideUp 0.6s ease 0.3s both;
+}
+
+.password-input-wrapper {
+  margin-bottom: 2rem;
+  animation: fadeSlideUp 0.6s ease 0.4s both;
+}
+
+.password-input {
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  border: 3px solid var(--border);
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-family: monospace;
+  letter-spacing: 3px;
+  text-align: center;
+  background: var(--card-bg);
+  color: var(--text);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.password-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 5px var(--glow),
+              0 8px 25px var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.submit-password-btn {
+  width: 100%;
+  padding: 1.2rem 2rem;
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+  animation: fadeSlideUp 0.6s ease 0.5s both;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-password-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease;
+}
+
+.submit-password-btn:hover::before {
+  width: 400%;
+  height: 400%;
+}
+
+.submit-password-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(59, 130, 246, 0.5);
+}
+
+.submit-password-btn:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+.password-error-message {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  min-height: 24px;
+  animation: fadeSlideUp 0.6s ease 0.6s both;
+}
+
+/* Download Progress Modal */
+.download-progress-content {
+  max-width: 450px;
+  text-align: center;
+  padding: 2.5rem;
+}
+
+.download-progress-content h3 {
+  margin-bottom: 2rem;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 35px;
+  background: var(--section-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--gradient-primary);
+  border-radius: 20px;
+  transition: width 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.download-status {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.download-filename {
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
 .dev-back-btn {
   display: inline-block;
   padding: 1.1rem 2.5rem;
@@ -1848,39 +2058,6 @@ footer p {
   letter-spacing: 1px;
   position: relative;
   overflow: hidden;
-}
-
-.dev-download-btn {
-  background: var(--gradient-4);
-  color: white;
-  box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
-  animation: fadeSlideUp 0.6s ease 0.5s both;
-}
-
-.dev-download-btn::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: translate(-50%, -50%);
-  transition: all 0.6s ease;
-}
-
-.dev-download-btn:hover::before {
-  width: 400%;
-  height: 400%;
-}
-
-.dev-download-btn:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 12px 35px rgba(39, 174, 96, 0.4);
-}
-
-.dev-back-btn {
   background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
   color: white;
   box-shadow: 0 8px 25px rgba(149, 165, 166, 0.3);
@@ -1928,6 +2105,10 @@ footer p {
   .website-card-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+  }
+
+  .dev-menu-options {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -2165,14 +2346,23 @@ footer p {
   }
 
   .dev-login-btn,
-  .dev-download-btn,
-  .dev-back-btn {
+  .dev-back-btn,
+  .submit-password-btn {
     padding: 1rem 2rem;
     font-size: 0.95rem;
   }
 
-  .file-info {
+  .dev-menu-options {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .dev-option-card {
     padding: 1.5rem;
+  }
+
+  .option-icon {
+    font-size: 2.5rem;
   }
 
   #contact form {
@@ -2363,23 +2553,33 @@ footer p {
   }
 
   .dev-login-btn,
-  .dev-download-btn,
-  .dev-back-btn {
+  .dev-back-btn,
+  .submit-password-btn {
     padding: 0.9rem 1.5rem;
     font-size: 0.85rem;
     margin: 0.4rem;
   }
 
-  .file-info {
-    padding: 1.2rem;
+  .password-input {
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+    letter-spacing: 2px;
   }
 
-  .file-info h3 {
+  .dev-option-card {
+    padding: 1.3rem;
+  }
+
+  .option-icon {
+    font-size: 2.2rem;
+  }
+
+  .dev-option-card h3 {
     font-size: 1.1rem;
   }
 
-  .file-info p {
-    font-size: 0.9rem;
+  .dev-option-card p {
+    font-size: 0.85rem;
   }
 
   #contact form {
@@ -2419,99 +2619,6 @@ footer p {
   }
 }
 
-/* High Performance Mode - Prefers Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  .fade-in {
-    opacity: 1;
-    transform: none;
-  }
-
-  .skill-item:hover,
-  .project-card:hover,
-  .website-card:hover {
-    transform: none;
-  }
-
-  #scroll-top,
-  .dev-access-btn {
-    animation: none;
-  }
-}
-
-/* Print Styles */
-@media print {
-  header,
-  #scroll-top,
-  .dev-access-btn,
-  #theme-toggle,
-  #music-toggle,
-  #mobile-menu-toggle,
-  .modal,
-  #dev-login-overlay {
-    display: none !important;
-  }
-
-  body {
-    background: white;
-    color: black;
-  }
-
-  section {
-    page-break-inside: avoid;
-    padding: 2rem 0;
-  }
-
-  .hero {
-    height: auto;
-    margin-top: 0;
-  }
-
-  .profile-img {
-    box-shadow: none;
-    border: 2px solid #000;
-  }
-
-  a {
-    color: #000;
-    text-decoration: underline;
-  }
-
-  .btn {
-    border: 2px solid #000;
-    background: white !important;
-    color: black !important;
-  }
-}
-
-/* Dark Mode Specific Enhancements */
-body.dark .skill-item:hover,
-body.dark .project-card:hover,
-body.dark .website-card:hover {
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
-              0 0 60px var(--glow);
-}
-
-body.dark .modal-content {
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9),
-              0 0 100px var(--glow);
-}
-
-body.dark .btn-primary {
-  box-shadow: 0 10px 30px rgba(96, 165, 250, 0.5);
-}
-
-body.dark .btn-primary:hover {
-  box-shadow: 0 15px 40px rgba(96, 165, 250, 0.6);
-}
-
 /* Selection Styles */
 ::selection {
   background: var(--primary);
@@ -2536,15 +2643,6 @@ input:focus-visible,
 textarea:focus-visible {
   outline: 3px solid var(--primary);
   outline-offset: 2px;
-}
-
-/* Loading State Animation */
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.loading {
-  animation: spin 1s linear infinite;
 }
 
 /* Utility Classes */
@@ -2629,7 +2727,8 @@ button,
 .skill-item,
 .project-card,
 .website-card,
-.close {
+.close,
+.dev-option-card {
   cursor: pointer;
 }
 
@@ -2637,7 +2736,8 @@ button,
 button,
 .skill-item,
 .project-card,
-.website-card {
+.website-card,
+.dev-option-card {
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -2656,4 +2756,97 @@ button:active,
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* End of Stylesheet */s
+/* Dark Mode Specific Enhancements */
+body.dark .skill-item:hover,
+body.dark .project-card:hover,
+body.dark .website-card:hover {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+              0 0 60px var(--glow);
+}
+
+body.dark .modal-content {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9),
+              0 0 100px var(--glow);
+}
+
+body.dark .btn-primary {
+  box-shadow: 0 10px 30px rgba(96, 165, 250, 0.5);
+}
+
+body.dark .btn-primary:hover {
+  box-shadow: 0 15px 40px rgba(96, 165, 250, 0.6);
+}
+
+/* Print Styles */
+@media print {
+  header,
+  #scroll-top,
+  .dev-access-btn,
+  #theme-toggle,
+  #music-toggle,
+  #mobile-menu-toggle,
+  .modal,
+  #dev-login-overlay {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  section {
+    page-break-inside: avoid;
+    padding: 2rem 0;
+  }
+
+  .hero {
+    height: auto;
+    margin-top: 0;
+  }
+
+  .profile-img {
+    box-shadow: none;
+    border: 2px solid #000;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .btn {
+    border: 2px solid #000;
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* High Performance Mode - Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .skill-item:hover,
+  .project-card:hover,
+  .website-card:hover {
+    transform: none;
+  }
+
+  #scroll-top,
+  .dev-access-btn {
+    animation: none;
+  }
+}
+
+/* End of Stylesheet */
