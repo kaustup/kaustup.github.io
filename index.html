@@ -59,7 +59,7 @@
     <div class="container">
       <h2 class="section-title">About Me</h2>
       <div class="about-content">
-        <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Kaustup Dhakal" class="profile-img" />
+        <img src="me.jpeg" alt="Kaustup Dhakal" class="profile-img" />
         <div class="about-text">
           <p>I'm a <strong>13-year-old student</strong> passionate about coding, design, and creating fun digital experiences. I work on websites and games using HTML, CSS, JavaScript, and Scratch.</p>
           <p>I'm constantly learning and improving my skills, exploring new technologies, and building projects that challenge me to grow as a developer.</p>
@@ -199,16 +199,71 @@
       <h2>Developer Panel</h2>
       <p>Welcome to the developer section!</p>
       
-      <div class="file-info">
-        <h3>📁 Available Download</h3>
-        <p><strong>File:</strong> school.zip</p>
-        <p><strong>Type:</strong> Archive</p>
-        <p><strong>Status:</strong> Ready for download</p>
+      <div class="dev-menu-options">
+        <div class="dev-option-card" onclick="openPasswordModal('website')" tabindex="0" role="button">
+          <div class="option-icon">🌐</div>
+          <h3>Website</h3>
+          <p>School Project Archive</p>
+          <span class="option-hint">🔒 Password Protected</span>
+        </div>
+
+        <div class="dev-option-card" onclick="openPasswordModal('jarvis')" tabindex="0" role="button">
+          <div class="option-icon">🤖</div>
+          <h3>Jarvis Structure</h3>
+          <p>AI Assistant System</p>
+          <span class="option-hint">🔒 Password Protected</span>
+        </div>
+
+        <div class="dev-option-card" onclick="downloadFlappyBird()" tabindex="0" role="button">
+          <div class="option-icon">🎮</div>
+          <h3>Flappy Bird Game</h3>
+          <p>Classic Game Project</p>
+          <span class="option-hint">✓ Direct Download</span>
+        </div>
       </div>
-      
-      <button class="dev-download-btn" onclick="downloadSchoolFile()">📥 Download school.zip</button>
+
       <button class="dev-back-btn" onclick="backToLogin()">← Back to Login</button>
       <button class="dev-back-btn" onclick="closeDevLogin()">✕ Close Panel</button>
+    </div>
+  </div>
+
+  <!-- Password Modal for Website -->
+  <div id="websitePasswordModal" class="modal password-modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close" onclick="closePasswordModal('website')">&times;</span>
+      <h3>🔒 Enter Password</h3>
+      <p class="modal-subtitle">Access School Website Project</p>
+      <div class="password-input-wrapper">
+        <input type="password" id="websitePasswordInput" class="password-input" placeholder="Enter password" maxlength="15" aria-label="Website password">
+      </div>
+      <button class="submit-password-btn" onclick="verifyPassword('website')">🔓 Unlock & Download</button>
+      <div class="password-error-message" id="websiteErrorMessage"></div>
+    </div>
+  </div>
+
+  <!-- Password Modal for Jarvis -->
+  <div id="jarvisPasswordModal" class="modal password-modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close" onclick="closePasswordModal('jarvis')">&times;</span>
+      <h3>🔒 Enter Password</h3>
+      <p class="modal-subtitle">Access Jarvis Structure System</p>
+      <div class="password-input-wrapper">
+        <input type="password" id="jarvisPasswordInput" class="password-input" placeholder="Enter password" maxlength="15" aria-label="Jarvis password">
+      </div>
+      <button class="submit-password-btn" onclick="verifyPassword('jarvis')">🔓 Unlock & Download</button>
+      <div class="password-error-message" id="jarvisErrorMessage"></div>
+    </div>
+  </div>
+
+  <!-- Download Progress Modal -->
+  <div id="downloadProgressModal" class="modal" aria-hidden="true">
+    <div class="modal-content download-progress-content">
+      <h3>📥 Downloading...</h3>
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="progressBarFill"></div>
+      </div>
+      <p class="download-status" id="downloadStatusText">Preparing download...</p>
+      <p class="download-filename" id="downloadFilename"></p>
     </div>
   </div>
 

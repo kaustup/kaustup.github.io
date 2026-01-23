@@ -410,6 +410,7 @@ function checkDevPassword() {
     
     // Confetti effect
     createConfetti();
+    showNotification("Access granted! Welcome to Developer Panel", "success");
     
   } else {
     // Wrong password - shake and show error
@@ -459,30 +460,215 @@ function resetDevLogin() {
   if (errorMessage) errorMessage.classList.remove("show");
 }
 
-function downloadSchoolFile() {
-  showNotification("Checking for file...", "info");
+// ============================================
+// PASSWORD PROTECTED FILE DOWNLOADS
+// ============================================
+
+// Password configuration
+const filePasswords = {
+  website: 'school.zip4153',
+  jarvis: 'jarvis.zip4143'
+};
+
+// File URLs
+const fileUrls = {
+  website: 'school.zip',
+  jarvis: 'jarvis4.0.zip'
+};
+
+function openPasswordModal(type) {
+  const modalId = type + 'PasswordModal';
+  const modal = document.getElementById(modalId);
+  const inputId = type + 'PasswordInput';
+  const errorId = type + 'ErrorMessage';
   
-  fetch('school.zip', { method: 'HEAD' })
-    .then(response => {
-      if (response.ok) {
-        const link = document.createElement('a');
-        link.href = 'school.zip';
-        link.download = 'school.zip';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        
-        showNotification("Download started successfully!", "success");
-      } else {
-        showNotification("File not found. Please upload school.zip to your server.", "error");
-      }
-    })
-    .catch(() => {
-      showNotification("Error accessing file. Please check your server.", "error");
-    });
+  if (modal) {
+    modal.style.display = "block";
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    
+    // Clear previous input and error
+    const input = document.getElementById(inputId);
+    const error = document.getElementById(errorId);
+    if (input) input.value = "";
+    if (error) error.textContent = "";
+    
+    // Focus on password input
+    setTimeout(() => {
+      if (input) input.focus();
+    }, 100);
+  }
 }
 
-// Enter key to submit password
+function closePasswordModal(type) {
+  const modalId = type + 'PasswordModal';
+  const modal = document.getElementById(modalId);
+  const inputId = type + 'PasswordInput';
+  const errorId = type + 'ErrorMessage';
+  
+  if (modal) {
+    modal.style.display = "none";
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    
+    // Clear input and error
+    const input = document.getElementById(inputId);
+    const error = document.getElementById(errorId);
+    if (input) input.value = "";
+    if (error) error.textContent = "";
+  }
+}
+
+function verifyPassword(type) {
+  const inputId = type + 'PasswordInput';
+  const errorId = type + 'ErrorMessage';
+  const input = document.getElementById(inputId);
+  const error = document.getElementById(errorId);
+  
+  if (!input || !error) {
+    console.error("Password input elements not found");
+    return;
+  }
+  
+  const enteredPassword = input.value;
+  const correctPassword = filePasswords[type];
+  
+  if (enteredPassword === correctPassword) {
+    // Correct password
+    error.textContent = "";
+    error.style.color = "#10b981";
+    error.textContent = "✓ Password correct! Starting download...";
+    
+    setTimeout(() => {
+      closePasswordModal(type);
+      startDownload(type);
+    }, 1000);
+    
+  } else {
+    // Wrong password
+    error.style.color = "#e74c3c";
+    error.textContent = "❌ Incorrect password. Please try again.";
+    
+    // Shake animation
+    const modalContent = document.querySelector(`#${type}PasswordModal .modal-content`);
+    if (modalContent) {
+      modalContent.style.animation = "shake 0.5s ease-in-out";
+      setTimeout(() => {
+        modalContent.style.animation = "";
+      }, 500);
+    }
+    
+    // Clear password input
+    input.value = "";
+    input.focus();
+  }
+}
+
+// Handle Enter key in password inputs
+document.addEventListener("DOMContentLoaded", () => {
+  const websiteInput = document.getElementById("websitePasswordInput");
+  const jarvisInput = document.getElementById("jarvisPasswordInput");
+  
+  if (websiteInput) {
+    websiteInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        verifyPassword('website');
+      }
+    });
+  }
+  
+  if (jarvisInput) {
+    jarvisInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        verifyPassword('jarvis');
+      }
+    });
+  }
+});
+
+// ============================================
+// DOWNLOAD FUNCTIONALITY WITH PROGRESS
+// ============================================
+
+function startDownload(type) {
+  const progressModal = document.getElementById("downloadProgressModal");
+  const progressFill = document.getElementById("progressBarFill");
+  const statusText = document.getElementById("downloadStatusText");
+  const filenameText = document.getElementById("downloadFilename");
+  const filename = fileUrls[type];
+  
+  if (!progressModal) {
+    // Fallback if modal doesn't exist
+    initiateDownload(type);
+    return;
+  }
+  
+  // Show progress modal
+  progressModal.style.display = "block";
+  progressModal.setAttribute("aria-hidden", "false");
+  
+  // Reset progress
+  if (progressFill) progressFill.style.width = "0%";
+  if (statusText) statusText.textContent = "Preparing download...";
+  if (filenameText) filenameText.textContent = `File: ${filename}`;
+  
+  // Simulate download progress
+  let progress = 0;
+  const interval = setInterval(() => {
+    progress += Math.random() * 15;
+    
+    if (progress >= 100) {
+      progress = 100;
+      clearInterval(interval);
+      
+      if (progressFill) progressFill.style.width = "100%";
+      if (statusText) statusText.textContent = "✓ Download complete!";
+      
+      // Trigger actual download
+      initiateDownload(type);
+      
+      // Close progress modal after 1.5 seconds
+      setTimeout(() => {
+        progressModal.style.display = "none";
+        progressModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        showNotification(`${filename} downloaded successfully!`, "success");
+      }, 1500);
+    } else {
+      if (progressFill) progressFill.style.width = progress + "%";
+      if (statusText) statusText.textContent = `Downloading... ${Math.round(progress)}%`;
+    }
+  }, 200);
+}
+
+function initiateDownload(type) {
+  const filename = fileUrls[type];
+  const link = document.createElement('a');
+  link.href = filename;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+function downloadFlappyBird() {
+  showNotification("Starting Flappy Bird download...", "info");
+  
+  setTimeout(() => {
+    const link = document.createElement('a');
+    link.href = 'flappybirdgame.zip';
+    link.download = 'flappybirdgame.zip';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    showNotification("Flappy Bird game downloaded successfully!", "success");
+  }, 500);
+}
+
+// Enter key to submit dev password
 document.addEventListener("DOMContentLoaded", () => {
   const passwordInput = document.getElementById("devPasswordInput");
   
