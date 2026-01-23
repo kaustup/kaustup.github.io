@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Portfolio of Kaustup Dhakal, a young web developer from Nepal." />
   <meta name="keywords" content="Kaustup Dhakal, web developer, portfolio, projects, skills" />
-  <meta name="google-site-verification" content="fycR5O8Fpy8vEWCSyoCM8g3DpCNEJLKX-3EtREZ7o-U" />
   <title>Kaustup Dhakal | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
   <script defer src="script.js"></script>
   <link rel="icon" href="favicon.png" type="image/png" />
 </head>
@@ -45,7 +44,7 @@
     </div>
   </header>
 
-  <section id="home" class="hero" style="background: url('h.jpeg') no-repeat center center / cover;">
+  <section id="home" class="hero" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);">
     <div class="overlay">
       <div class="home-content">
         <h2>Hello, I'm <span class="gradient-text">Kaustup Dhakal</span></h2>
@@ -59,10 +58,27 @@
     <div class="container">
       <h2 class="section-title">About Me</h2>
       <div class="about-content">
-        <img src="me.jpeg" alt="Kaustup Dhakal" class="profile-img" />
+        <div class="profile-image-wrapper">
+          <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Kaustup Dhakal" class="profile-img" />
+          <div class="profile-ring"></div>
+        </div>
         <div class="about-text">
           <p>I'm a <strong>13-year-old student</strong> passionate about coding, design, and creating fun digital experiences. I work on websites and games using HTML, CSS, JavaScript, and Scratch.</p>
           <p>I'm constantly learning and improving my skills, exploring new technologies, and building projects that challenge me to grow as a developer.</p>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number">6+</div>
+              <div class="stat-label">Technologies</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">10+</div>
+              <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Passion</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -73,28 +89,46 @@
       <h2 class="section-title">Skills & Tools</h2>
       <div class="skills-grid">
         <div class="skill-item" onclick="openModal('htmlSkillModal')" tabindex="0" role="button">
-          <img src="assets/icons/html.jpeg" title="HTML" alt="HTML Icon" />
+          <div class="skill-icon">🌐</div>
           <span class="skill-name">HTML</span>
+          <div class="skill-level">
+            <div class="skill-bar" style="width: 90%"></div>
+          </div>
         </div>
         <div class="skill-item" onclick="openModal('cssSkillModal')" tabindex="0" role="button">
-          <img src="assets/icons/css.jpeg" title="CSS" alt="CSS Icon" />
+          <div class="skill-icon">🎨</div>
           <span class="skill-name">CSS</span>
+          <div class="skill-level">
+            <div class="skill-bar" style="width: 85%"></div>
+          </div>
         </div>
         <div class="skill-item" onclick="openModal('jsSkillModal')" tabindex="0" role="button">
-          <img src="assets/icons/js.jpeg" title="JavaScript" alt="JavaScript Icon" />
+          <div class="skill-icon">⚡</div>
           <span class="skill-name">JavaScript</span>
+          <div class="skill-level">
+            <div class="skill-bar" style="width: 80%"></div>
+          </div>
         </div>
         <div class="skill-item" onclick="openModal('scratchSkillModal')" tabindex="0" role="button">
-          <img src="assets/icons/scratch.jpeg" title="Scratch" alt="Scratch Icon" />
+          <div class="skill-icon">🐱</div>
           <span class="skill-name">Scratch</span>
+          <div class="skill-level">
+            <div class="skill-bar" style="width: 95%"></div>
+          </div>
         </div>
         <div class="skill-item" onclick="openModal('githubSkillModal')" tabindex="0" role="button">
-          <img src="assets/icons/github.jpeg" title="GitHub" alt="GitHub Icon" />
+          <div class="skill-icon">📦</div>
           <span class="skill-name">GitHub</span>
+          <div class="skill-level">
+            <div class="skill-bar" style="width: 75%"></div>
+          </div>
         </div>
         <div class="skill-item" onclick="openModal('reactSkillModal')" tabindex="0" role="button">
-          <img src="assets/icons/react.jpeg" title="React" alt="React Icon" />
+          <div class="skill-icon">⚛️</div>
           <span class="skill-name">React</span>
+          <div class="skill-level">
+            <div class="skill-bar" style="width: 70%"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -105,16 +139,30 @@
       <h2 class="section-title">My Projects</h2>
       <div class="project-grid">
         <div class="project-card" onclick="openModal('chessGameModal')" tabindex="0" role="button">
-          <div class="project-icon">♟️</div>
+          <div class="project-header">
+            <div class="project-icon">♟️</div>
+            <span class="project-status">Completed</span>
+          </div>
           <h3>Chess Game</h3>
-          <p class="short">A browser-based chess game using pure JavaScript.</p>
-          <span class="read-more">Click to learn more →</span>
+          <p class="short">A browser-based chess game using pure JavaScript with full chess rules implementation.</p>
+          <div class="project-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">Game Dev</span>
+          </div>
+          <span class="read-more">View Details →</span>
         </div>
         <div class="project-card" onclick="openModal('spaceShooterModal')" tabindex="0" role="button">
-          <div class="project-icon">🚀</div>
+          <div class="project-header">
+            <div class="project-icon">🚀</div>
+            <span class="project-status status-progress">In Progress</span>
+          </div>
           <h3>Space Shooter</h3>
-          <p class="short">A Scratch game with enemies and music.</p>
-          <span class="read-more">Click to learn more →</span>
+          <p class="short">A Scratch game with enemies, power-ups, and dynamic music system.</p>
+          <div class="project-tags">
+            <span class="tag">Scratch</span>
+            <span class="tag">Game Dev</span>
+          </div>
+          <span class="read-more">View Details →</span>
         </div>
       </div>
     </div>
@@ -126,13 +174,19 @@
       <p class="section-subtitle">Here are some of my published web creations:</p>
       <div class="website-card-grid">
         <div class="website-card">
-          <div class="website-icon">🎉</div>
+          <div class="website-header">
+            <div class="website-icon">🎉</div>
+            <span class="website-badge">Live</span>
+          </div>
           <h3>Farewell to Prakash Sir</h3>
           <p>A tribute site created for our beloved teacher Prakash Sir. Built using Carrd.</p>
           <a href="https://happyfarewellprakashsir.carrd.co" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Visit Site</a>
         </div>
         <div class="website-card">
-          <div class="website-icon">🎓</div>
+          <div class="website-header">
+            <div class="website-icon">🎓</div>
+            <span class="website-badge">Live</span>
+          </div>
           <h3>Students 8D</h3>
           <p>A website showcasing the Class 8D community. Projects, memories, and more.</p>
           <a href="https://students8d.carrd.co/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Visit Site</a>
@@ -177,7 +231,7 @@
     <span>↑</span>
   </button>
 
-  <!-- Dev Access Button -->
+  <!-- Developer Access Button -->
   <button class="dev-access-btn" onclick="openDevLogin()" aria-label="Developer access">
     <span>🔧</span>
   </button>
@@ -185,85 +239,77 @@
   <!-- Dev Login Overlay -->
   <div id="dev-login-overlay" aria-hidden="true">
     <div class="dev-login-container" id="devLoginContainer">
-      <div class="dev-icon">🔧</div>
+      <div class="dev-icon">🔐</div>
       <h2>Developer Access</h2>
+      <p class="dev-subtitle">Enter the master password to continue</p>
       <div class="dev-input-group">
-        <input type="password" id="devPasswordInput" placeholder="Enter developer password" maxlength="4" aria-label="Developer password">
+        <input type="password" id="devPasswordInput" placeholder="Enter password" maxlength="4" aria-label="Developer password">
       </div>
-      <button class="dev-login-btn" onclick="checkDevPassword()">Access</button>
-      <div class="dev-error-message" id="devErrorMessage">Invalid password. Please try again.</div>
+      <button class="dev-login-btn" onclick="checkDevPassword()">🔓 Unlock</button>
+      <div class="dev-error-message" id="devErrorMessage">❌ Invalid password. Please try again.</div>
     </div>
 
+    <!-- Main Dev Panel Menu -->
     <div class="dev-panel" id="devPanel">
       <div class="success-icon">✅</div>
       <h2>Developer Panel</h2>
-      <p>Welcome to the developer section!</p>
+      <p class="panel-subtitle">Select an option below</p>
       
-      <div class="dev-menu-options">
-        <div class="dev-option-card" onclick="openPasswordModal('website')" tabindex="0" role="button">
-          <div class="option-icon">🌐</div>
-          <h3>Website</h3>
-          <p>School Project Archive</p>
-          <span class="option-hint">🔒 Password Protected</span>
-        </div>
-
-        <div class="dev-option-card" onclick="openPasswordModal('jarvis')" tabindex="0" role="button">
-          <div class="option-icon">🤖</div>
-          <h3>Jarvis Structure</h3>
-          <p>AI Assistant System</p>
-          <span class="option-hint">🔒 Password Protected</span>
-        </div>
-
-        <div class="dev-option-card" onclick="downloadFlappyBird()" tabindex="0" role="button">
-          <div class="option-icon">🎮</div>
-          <h3>Flappy Bird Game</h3>
-          <p>Classic Game Project</p>
-          <span class="option-hint">✓ Direct Download</span>
-        </div>
+      <div class="dev-menu-grid">
+        <button class="dev-menu-item" onclick="openWebsiteSection()">
+          <div class="menu-icon">🌐</div>
+          <div class="menu-label">Website</div>
+          <div class="menu-desc">Access school website files</div>
+        </button>
+        
+        <button class="dev-menu-item" onclick="openJarvisSection()">
+          <div class="menu-icon">🤖</div>
+          <div class="menu-label">JARVIS Structure</div>
+          <div class="menu-desc">AI assistant framework</div>
+        </button>
       </div>
-
-      <button class="dev-back-btn" onclick="backToLogin()">← Back to Login</button>
+      
       <button class="dev-back-btn" onclick="closeDevLogin()">✕ Close Panel</button>
     </div>
-  </div>
 
-  <!-- Password Modal for Website -->
-  <div id="websitePasswordModal" class="modal password-modal" aria-hidden="true">
-    <div class="modal-content">
-      <span class="close" onclick="closePasswordModal('website')">&times;</span>
-      <h3>🔒 Enter Password</h3>
-      <p class="modal-subtitle">Access School Website Project</p>
-      <div class="password-input-wrapper">
-        <input type="password" id="websitePasswordInput" class="password-input" placeholder="Enter password" maxlength="15" aria-label="Website password">
+    <!-- Website Section -->
+    <div class="dev-section" id="websiteSection">
+      <div class="section-header">
+        <button class="back-button" onclick="backToDevPanel()">← Back</button>
+        <div class="section-icon">🌐</div>
       </div>
-      <button class="submit-password-btn" onclick="verifyPassword('website')">🔓 Unlock & Download</button>
-      <div class="password-error-message" id="websiteErrorMessage"></div>
+      <h2>Website Access</h2>
+      <p class="section-subtitle">Enter password to download school.zip</p>
+      
+      <div class="dev-input-group">
+        <input type="password" id="websitePasswordInput" placeholder="Enter website password" aria-label="Website password">
+      </div>
+      <button class="dev-action-btn" onclick="verifyWebsitePassword()">🔓 Verify & Download</button>
+      <div class="dev-error-message" id="websiteErrorMessage">❌ Invalid password.</div>
+      
+      <div class="password-hint">
+        💡 Hint: school.zip + master password
+      </div>
     </div>
-  </div>
 
-  <!-- Password Modal for Jarvis -->
-  <div id="jarvisPasswordModal" class="modal password-modal" aria-hidden="true">
-    <div class="modal-content">
-      <span class="close" onclick="closePasswordModal('jarvis')">&times;</span>
-      <h3>🔒 Enter Password</h3>
-      <p class="modal-subtitle">Access Jarvis Structure System</p>
-      <div class="password-input-wrapper">
-        <input type="password" id="jarvisPasswordInput" class="password-input" placeholder="Enter password" maxlength="15" aria-label="Jarvis password">
+    <!-- JARVIS Section -->
+    <div class="dev-section" id="jarvisSection">
+      <div class="section-header">
+        <button class="back-button" onclick="backToDevPanel()">← Back</button>
+        <div class="section-icon">🤖</div>
       </div>
-      <button class="submit-password-btn" onclick="verifyPassword('jarvis')">🔓 Unlock & Download</button>
-      <div class="password-error-message" id="jarvisErrorMessage"></div>
-    </div>
-  </div>
-
-  <!-- Download Progress Modal -->
-  <div id="downloadProgressModal" class="modal" aria-hidden="true">
-    <div class="modal-content download-progress-content">
-      <h3>📥 Downloading...</h3>
-      <div class="progress-bar-container">
-        <div class="progress-bar-fill" id="progressBarFill"></div>
+      <h2>JARVIS Structure</h2>
+      <p class="section-subtitle">Enter password to access JARVIS 4.0</p>
+      
+      <div class="dev-input-group">
+        <input type="password" id="jarvisPasswordInput" placeholder="Enter JARVIS password" aria-label="JARVIS password">
       </div>
-      <p class="download-status" id="downloadStatusText">Preparing download...</p>
-      <p class="download-filename" id="downloadFilename"></p>
+      <button class="dev-action-btn jarvis-btn" onclick="verifyJarvisPassword()">🔓 Verify & Download</button>
+      <div class="dev-error-message" id="jarvisErrorMessage">❌ Invalid password.</div>
+      
+      <div class="password-hint">
+        💡 Hint: jarvis.zip + master password
+      </div>
     </div>
   </div>
 
@@ -298,7 +344,7 @@
     </div>
   </div>
 
-  <!-- Modals for Skill Details -->
+  <!-- Skill Modals -->
   <div id="htmlSkillModal" class="modal" aria-hidden="true" role="dialog">
     <div class="modal-content">
       <span class="close" onclick="closeModal('htmlSkillModal')" aria-label="Close">&times;</span>
