@@ -12,6 +12,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
   <script defer src="script.js"></script>
   <link rel="icon" href="favicon.png" type="image/png" />
+  <style>
+    .hero-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #3b82f6;
+      margin-bottom: 20px;
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+      50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.8); }
+      100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -47,6 +64,7 @@
   <section id="home" class="hero" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);">
     <div class="overlay">
       <div class="home-content">
+        <img src="h.jpeg" alt="Kaustup Dhakal" class="hero-image" />
         <h2>Hello, I'm <span class="gradient-text">Kaustup Dhakal</span></h2>
         <p class="subtitle">Young Web Developer & Student from Nepal</p>
         <a href="#projects" class="btn btn-primary">Explore My Work</a>
