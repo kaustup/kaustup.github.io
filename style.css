@@ -2848,5 +2848,14 @@ body.dark .btn-primary:hover {
     animation: none;
   }
 }
+.hero-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #3b82f6;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
 
 /* End of Stylesheet */
